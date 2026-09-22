@@ -1,0 +1,621 @@
+/* === VARIAVEIS GLOBAIS DO SITE ===
+   Aqui são definidas as cores e os valores que serão usados em todo o projeto.
+   Isso facilita manter o visual uniforme em toda a página.
+*/
+:root {
+  --bg: #f1eee5;
+  --panel: #f5f1ea;
+  --panel-strong: #efe6dd;
+  --wine: #772f30;
+  --wine-dark: #5f1e23;
+  --green: #334c31;
+  --sage: #70836b;
+  --text: #2f201c;
+  --muted: #6f5a50;
+  --line: rgba(55, 32, 24, 0.18);
+  --shadow: rgba(31, 20, 15, 0.12);
+}
+/* === CONTAINER PRINCIPAL ===
+   Define a largura máxima da página e centraliza o conteúdo visualmente.
+*/
+.page-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: var(--bg);
+  min-height: 100vh;
+  border-left: 1px solid rgba(57, 36, 21, 0.08);
+  border-right: 1px solid rgba(57, 36, 21, 0.08);
+  box-shadow: 0 15px 30px rgba(44, 25, 18, 0.08);
+}
+/* === RESET E BASE DO SITE ===
+   Este bloco remove espaços padrão do navegador e define a base visual.
+   Ele deixa a página mais limpa e consistente em todos os dispositivos.
+*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #e7dfd3;
+  color: var(--text);
+  font-family: "Inter", Arial, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+/* === CONTAINER PRINCIPAL ===
+   Define a largura máxima da página e centraliza o conteúdo visualmente.
+*/
+.page-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: var(--bg);
+  min-height: 100vh;
+  border-left: 1px solid rgba(57, 36, 21, 0.08);
+  border-right: 1px solid rgba(57, 36, 21, 0.08);
+  box-shadow: 0 15px 30px rgba(44, 25, 18, 0.08);
+}
+
+/* === CABEÇALHO ===
+   Este bloco configura a parte superior do site: nome, menu e botão do cabeçalho.
+*/
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 34px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 2vw, 2.5rem);
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+
+.brand span {
+  color: var(--wine);
+  font-style: italic;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  font-size: 1.05rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text);
+  opacity: 0.82;
+}
+
+.primary-btn,
+.secondary-btn {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.9rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn {
+  background: var(--wine);
+  color: #fff;
+  box-shadow: 0 10px 18px rgba(119, 47, 48, 0.22);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(47, 32, 28, 0.25);
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* === AREA PRINCIPAL DO CONTEUDO ===
+   Aqui ficam os blocos de texto, imagem e as principais seções do site.
+*/
+.content {
+  padding: 30px 34px 50px;
+}
+
+/* === HERO / APRESENTACAO DA PAGINA ===
+   Esse bloco organiza o texto e a imagem principal em duas colunas.
+*/
+.hero {
+  display: grid;
+  grid-template-columns: 1.08fr 1fr;
+  gap: 40px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  min-height: 620px;
+}
+
+.hero-copy {
+  padding: 18px 12px 18px 0;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--wine);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  line-height: 0.82;
+  letter-spacing: -0.05em;
+}
+
+.line-one,
+.line-two {
+  display: block;
+}
+
+.line-one {
+  font-size: clamp(5rem, 7vw, 9rem);
+  color: var(--text);
+}
+
+.line-two {
+  font-size: clamp(4.5rem, 6vw, 7.5rem);
+  color: var(--wine);
+  font-style: italic;
+  margin-top: 5px;
+}
+
+.lead {
+  margin-top: 28px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 2vw, 3rem);
+  line-height: 1.05;
+  color: var(--text);
+  max-width: 620px;
+}
+
+.description {
+  margin-top: 22px;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 660px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.hero-visual {
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 18px 35px rgba(42, 26, 19, 0.12);
+  min-height: 520px;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* === CARDS DE INFORMACAO ===
+   Estila os cartões que apresentam o público-alvo e a persona da campanha.
+*/
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 22px 20px;
+}
+
+.info-card h2 {
+  margin: 0 0 12px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.info-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.info-card.accent {
+  background: rgba(119, 47, 48, 0.05);
+}
+
+/* === GALERIA DE FOTOS ===
+   Organiza as quatro fotos locais em uma grade que se adapta à tela.
+*/
+.photo-gallery {
+  margin-top: 50px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+/* === SECOES DE CAMPANHA, EXPERIENCIA E MARKETING ===
+   Aqui os blocos são separados visualmente, para organizar melhor o conteúdo.
+*/
+.campaign-section,
+.experience,
+.marketing-strategy {
+  margin-top: 50px;
+}
+
+.section-heading {
+  margin-bottom: 20px;
+}
+
+.section-heading span {
+  color: var(--wine);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.74rem;
+  display: inline-block;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.3rem, 3vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.campaign-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 0.7fr;
+  gap: 22px;
+}
+
+.copy-card,
+.mini-cta,
+.detail-card,
+.strategy-item,
+.post-card {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.copy-card {
+  padding: 28px 26px;
+}
+
+.label {
+  margin: 18px 0 8px;
+  color: var(--wine);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.copy-card h3 {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: var(--text);
+}
+
+.slogan {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.copy-card p:last-child,
+.mini-cta p,
+.detail-card p,
+.strategy-item p,
+.price-text p,
+.post-body p {
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.mini-cta {
+  padding: 28px 24px;
+  background: linear-gradient(180deg, rgba(119, 47, 48, 0.07), rgba(255,255,255,0.08));
+}
+
+.mini-cta h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 2rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.detail-card {
+  padding: 22px 20px;
+}
+
+.detail-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+/* === PRECO E PACOTE ===
+   Define a caixa do pacote de ensaio e o estilo do valor.
+*/
+.pricing {
+  margin-top: 56px;
+}
+
+.price-box {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 20px;
+  background: linear-gradient(135deg, rgba(119, 47, 48, 0.08), rgba(255,255,255,0.12));
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 30px 28px;
+}
+
+.price-copy span {
+  display: inline-block;
+  color: var(--wine);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.price-copy h2 {
+  margin: 0 0 18px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3rem, 4vw, 5rem);
+  color: var(--wine);
+}
+
+.price-copy ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+  color: var(--text);
+}
+
+.price-copy li::before {
+  content: "•";
+  color: var(--green);
+  margin-right: 8px;
+}
+
+.price-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.price-text h3 {
+  margin-top: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.2rem;
+}
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.strategy-item {
+  padding: 20px 18px;
+}
+
+.strategy-item h3 {
+  margin: 0 0 10px;
+  font-size: 1.4rem;
+  color: var(--text);
+}
+
+.instagram-cta {
+  margin-top: 60px;
+}
+
+.post-card {
+  max-width: 980px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #f7f3ee;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+
+.user {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.post-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 22px 20px 28px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.site-footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.post-body {
+  padding: 22px 24px 26px;
+}
+
+.post-body h3 {
+  margin: 0 0 8px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.4rem, 3vw, 3.3rem);
+  color: var(--text);
+}
+
+.cta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.cta-row span {
+  color: var(--muted);
+}
+
+/* === RESPONSIVIDADE ===
+   Este bloco ajusta o layout para telas menores, como celular e tablet.
+   Sem ele, o site ficaria desorganizado em dispositivos menores.
+*/
+@media (max-width: 980px) {
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero,
+  .campaign-layout,
+  .price-box,
+  .experience-grid,
+  .strategy-grid,
+  .info-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-visual {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 620px) {
+  .content,
+  .topbar {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .brand {
+    font-size: 2rem;
+  }
+
+  .line-one {
+    font-size: 4.1rem;
+  }
+
+  .line-two {
+    font-size: 3.6rem;
+  }
+
+  .lead {
+    font-size: 1.7rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .post-card img {
+    height: 320px;
+  }
+}
