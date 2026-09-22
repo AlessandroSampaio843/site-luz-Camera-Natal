@@ -404,17 +404,27 @@ h1 {
   margin-top: 56px;
 }
 
-.price-box {
+.plans-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 20px;
-  background: linear-gradient(135deg, rgba(119, 47, 48, 0.08), rgba(255,255,255,0.12));
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 30px 28px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
 }
 
-.price-copy span {
+.plan-card {
+  padding: 26px 22px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: 0 8px 20px var(--shadow);
+}
+
+.featured-plan {
+  background: rgba(119, 47, 48, 0.09);
+  border-color: rgba(119, 47, 48, 0.38);
+  transform: translateY(-8px);
+}
+
+.plan-size {
   display: inline-block;
   color: var(--wine);
   text-transform: uppercase;
@@ -424,14 +434,22 @@ h1 {
   margin-bottom: 10px;
 }
 
-.price-copy h2 {
-  margin: 0 0 18px;
+.plan-card h3 {
+  margin: 0 0 8px;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(3rem, 4vw, 5rem);
+  font-size: 2.6rem;
+  color: var(--text);
+}
+
+.plan-card strong {
+  display: block;
+  margin-bottom: 20px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 2.7rem;
   color: var(--wine);
 }
 
-.price-copy ul {
+.plan-card ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -440,22 +458,30 @@ h1 {
   color: var(--text);
 }
 
-.price-copy li::before {
+.plan-card li::before {
   content: "•";
   color: var(--green);
   margin-right: 8px;
 }
 
-.price-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.additional-services {
+  margin-top: 18px;
+  padding: 22px 24px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--line);
+  border-radius: 18px;
 }
 
-.price-text h3 {
-  margin-top: 0;
+.additional-services h3 {
+  margin: 0 0 8px;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 2.2rem;
+  font-size: 2rem;
+}
+
+.additional-services p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .strategy-grid {
@@ -557,10 +583,10 @@ h1 {
 
   .hero,
   .campaign-layout,
-  .price-box,
   .experience-grid,
   .strategy-grid,
   .info-grid,
+  .plans-grid,
   .gallery-grid {
     grid-template-columns: 1fr;
   }
@@ -577,6 +603,10 @@ h1 {
 
   .hero-visual {
     min-height: 360px;
+  }
+
+  .featured-plan {
+    transform: none;
   }
 }
 
